@@ -1,0 +1,178 @@
+
+/* Website basics */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main text font */
+
+body {
+    font-family: 'Source Sans 3', Arial, sans-serif;
+}
+
+/* Heading font */
+
+h1, h2 {
+    font-family: 'Merriweather', Georgia, serif;
+}
+
+#wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    width: 115px;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: brown;
+}
+
+.introduction {
+    max-width: 800px;
+    margin-bottom: 35px;
+}
+
+.introduction p {
+    margin-bottom: 15px;
+}
+
+/* Photo grid */
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 185px;
+    gap: 15px;
+}
+
+.image-container figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container a {
+    display: block;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Larger photographs */
+
+.image-container figure:nth-child(1),
+.image-container figure:nth-child(6) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.image-container figure:nth-child(3),
+.image-container figure:nth-child(9) {
+    grid-row: span 2;
+}
+
+/* Photo captions */
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+/* Story page */
+
+.story {
+    max-width: 780px;
+    margin: 40px auto;
+}
+
+.story h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.story img {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.story p {
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 50px;
+    padding: 25px 0;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+}
+
+/* Tablet layout */
+
+@media (max-width: 850px) {
+    .image-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 550px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .image-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 290px;
+    }
+
+    .image-container figure {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
